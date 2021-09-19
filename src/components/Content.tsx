@@ -1,5 +1,7 @@
 import { MovieCard } from "../components/MovieCard";
 
+import "../styles/content.scss";
+
 interface ContentProps {
   movies: Array<{
     imdbID: string;

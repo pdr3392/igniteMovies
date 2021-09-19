@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { Button } from "./components/Button";
-import { MovieCard } from "./components/MovieCard";
 
 // import { SideBar } from './components/SideBar';
 import { Content } from "./components/Content";
@@ -84,23 +83,11 @@ export function App() {
         </div>
       </nav>
 
-      <div className="container">
-        <Content key={selectedGenre.name} selectedGenre={selectedGenre} />
-
-        <main>
-          <div className="movies-list">
-            {movies.map((movie) => (
-              <MovieCard
-                key={movie.imdbID}
-                title={movie.Title}
-                poster={movie.Poster}
-                runtime={movie.Runtime}
-                rating={movie.Ratings[0].Value}
-              />
-            ))}
-          </div>
-        </main>
-      </div>
+      <Content
+        key={selectedGenre.title}
+        movies={movies}
+        selectedGenre={selectedGenre}
+      />
     </div>
   );
 }
